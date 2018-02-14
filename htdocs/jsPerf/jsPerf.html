@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Perf testing</title>
+</head>
+<script src="./react.production.min.js"></script>
+<script src="./react-dom.production.min.js"></script>
+<body>
+<p>Perf testing for various javascript operations in a browser.</p>
+
+<p>Enter the number of iterations: <input id="iterationInput" type="text" width="40"/></p>
+<p><input type="button" onclick="starttest()" value="Start test"/></p>
+
+<p id="statusParagraph">Current status: <span id="statusDesc">not started</span></p>
+
+<p id="emptyParagraph"></p>
+
+<p>
+<div>
+    <table border="2">
+        <thead>
+        <th>Table contents changed by innerHTML text</th>
+        </thead>
+        <tbody id="changeTableByText">
+        <tr>
+
+        </tr>
+        </tbody>
+    </table>
+</div>
+</p>
+
+<p>
+<div>
+    <table border="2">
+        <thead>
+        <th>Table contents changed by building elements</th>
+        </thead>
+        <tbody id="changeTableByElements">
+        <tr>
+
+        </tr>
+        </tbody>
+    </table>
+</div>
+</p>
+
+
+<div>
+<div id="reactComponent"/>
+</div>
+
+
+</body>
+</html>
+
+<script src="./reactComponent.js"></script>
+<script src="./testScripts.js"></script>
