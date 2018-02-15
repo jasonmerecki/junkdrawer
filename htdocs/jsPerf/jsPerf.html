@@ -3,45 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <title>Perf testing</title>
+    <style>
+        body {
+            background-color: #ffffff;
+        }
+
+        div.testTable {
+            margin-left: 40px;
+            float: left;
+        }
+        div.stats {
+            margin: 40px;
+            clear: both;
+        }
+    </style>
 </head>
 <script src="./react.production.min.js"></script>
 <script src="./react-dom.production.min.js"></script>
 <body>
 <p>Perf testing for various javascript operations in a browser.</p>
 
-<p>Enter the number of iterations: <input id="iterationInput" type="text" width="40" value="10000"/></p>
+<p>Enter the number of iterations: <input id="iterationInput" type="text" width="40" value="1000"/></p>
 <p><input type="button" onclick="starttest()" value="Start test"/></p>
 
 <p id="statusParagraph">Current status: <span id="statusDesc">not started</span></p>
 
 <p id="emptyParagraph"></p>
 
-<p>
-<div>
-    <table border="2">
-        <thead>
-        <th colspan="2">Table contents changed by innerHTML text</th>
-        </thead>
-        <tbody id="changeTableByText">
-        <tr>
-            <td>ABC</td>
-            <td>49.02</td>
-        </tr>
-        <tr>
-            <td>DEF</td>
-            <td>132.18</td>
-        </tr>
-        <tr>
-            <td>GHI</td>
-            <td>89.01</td>
-        </tr>
-        </tbody>
-    </table>
-</div>
-</p>
-
-<p>
-<div>
+<div id="tableContainer">
+<div class="testTable">
     <table border="2">
         <thead>
         <th colspan="2">Table contents changed by building elements</th>
@@ -62,16 +52,41 @@
         </tbody>
     </table>
 </div>
-</p>
+
+<div class="testTable">
+    <table border="2">
+        <thead>
+        <th colspan="2">Table contents changed by innerHTML text</th>
+        </thead>
+        <tbody id="changeTableByText">
+        <tr>
+            <td>ABC</td>
+            <td>49.02</td>
+        </tr>
+        <tr>
+            <td>DEF</td>
+            <td>132.18</td>
+        </tr>
+        <tr>
+            <td>GHI</td>
+            <td>89.01</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
 
 
-<div>
+<div class="testTable">
 <div id="reactComponent"/>
 </div>
 
-<p id="stats">
+</div>
 
+<div class="stats">
+<p id="stats">
+(statistics)
 </p>
+</div>
 
 </body>
 </html>
