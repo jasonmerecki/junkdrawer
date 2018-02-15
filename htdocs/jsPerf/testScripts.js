@@ -118,6 +118,9 @@ const iterationInput = document.getElementById('iterationInput');
 
 function starttest() {
     iterations = 0;
+    totalEleChanges = 0;
+    totalTextChanges = 0;
+    totalReactChanges = 0;
     maxIterations = iterationInput.value;
     window.alert("starting " + maxIterations);
 
