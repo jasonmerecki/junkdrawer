@@ -9,7 +9,7 @@
 <body>
 <p>Perf testing for various javascript operations in a browser.</p>
 
-<p>Enter the number of iterations: <input id="iterationInput" type="text" width="40"/></p>
+<p>Enter the number of iterations: <input id="iterationInput" type="text" width="40" value="10000"/></p>
 <p><input type="button" onclick="starttest()" value="Start test"/></p>
 
 <p id="statusParagraph">Current status: <span id="statusDesc">not started</span></p>
@@ -20,11 +20,20 @@
 <div>
     <table border="2">
         <thead>
-        <th>Table contents changed by innerHTML text</th>
+        <th colspan="2">Table contents changed by innerHTML text</th>
         </thead>
         <tbody id="changeTableByText">
         <tr>
-
+            <td>ABC</td>
+            <td>49.02</td>
+        </tr>
+        <tr>
+            <td>DEF</td>
+            <td>132.18</td>
+        </tr>
+        <tr>
+            <td>GHI</td>
+            <td>89.01</td>
         </tr>
         </tbody>
     </table>
@@ -35,11 +44,20 @@
 <div>
     <table border="2">
         <thead>
-        <th>Table contents changed by building elements</th>
+        <th colspan="2">Table contents changed by building elements</th>
         </thead>
         <tbody id="changeTableByElements">
         <tr>
-
+            <td>ABC</td>
+            <td>49.02</td>
+        </tr>
+        <tr>
+            <td>DEF</td>
+            <td>132.18</td>
+        </tr>
+        <tr>
+            <td>GHI</td>
+            <td>89.01</td>
         </tr>
         </tbody>
     </table>
@@ -51,6 +69,9 @@
 <div id="reactComponent"/>
 </div>
 
+<p id="stats">
+
+</p>
 
 </body>
 </html>
