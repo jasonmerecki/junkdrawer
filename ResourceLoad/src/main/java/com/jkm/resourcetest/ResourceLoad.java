@@ -1,8 +1,9 @@
+package com.jkm.resourcetest;
+
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.Objects;
 import java.util.stream.Stream;
 
 public class ResourceLoad {
@@ -25,7 +26,7 @@ public class ResourceLoad {
         StringBuilder textBuilder = new StringBuilder();
         ClassLoader cl = (new ResourceLoad()).getClass().getClassLoader();
         try (Reader ir = new InputStreamReader(cl.getResourceAsStream("fakepackage/cpconfig.ini"))) {
-            System.out.println("got the class reader " + ir);
+            System.out.println("got the class char reader " + ir);
             try (Reader reader = new BufferedReader(ir)) {
                 int c = 0;
                 while ((c = reader.read()) != -1) {
@@ -39,6 +40,16 @@ public class ResourceLoad {
             ioe.printStackTrace();
         } catch (Exception e) {
             System.out.println("Exception reading resource: " + e);
+            e.printStackTrace();
+        }
+
+        try (Reader ir = new InputStreamReader(cl.getResourceAsStream("com/jkm/resourcetest/ResourceLoad.class"))) {
+            System.out.println("got the class byte reader " + ir);
+        } catch (IOException ioe) {
+            System.out.println("IOException reading class resource: " + ioe);
+            ioe.printStackTrace();
+        } catch (Exception e) {
+            System.out.println("Exception reading class resource: " + e);
             e.printStackTrace();
         }
 
